@@ -27,12 +27,12 @@ plugin.onMounted(() => {
     }
 
     if (g) {
-      if (/^1[0-9]{4,9}$/.test(target)) {
+      if (!/^[1-9][0-9]{4,9}$/.test(target)) {
         return e.reply('无效的群号', true)
       }
       config.ignoreGroups = [...new Set([...config.ignoreGroups, Number(target)])]
     } else if (q) {
-      if (/^1[0-9]{4,9}$/.test(target)) {
+      if (!/^[1-9][0-9]{4,9}$/.test(target)) {
         return e.reply('无效的 QQ 号', true)
       }
       config.ignoreQQs = [...new Set([...config.ignoreQQs, Number(target)])]
@@ -69,7 +69,7 @@ plugin.onMounted(() => {
 
     const imageUrl = await fetchSearchResult(word)
 
-    e.reply(segment.image(imageUrl))
+    e.reply(segment.image(imageUrl), true)
   })
 })
 
