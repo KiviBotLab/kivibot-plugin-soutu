@@ -69,7 +69,7 @@ plugin.onMounted(() => {
 
     const imageUrl = await fetchSearchResult(word)
 
-    e.reply(segment.image(imageUrl), true)
+    e.reply(segment.image(imageUrl))
   })
 })
 
