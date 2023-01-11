@@ -1,6 +1,6 @@
 {
   "name": "kivibot-plugin-soutu",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "QQ 机器人框架 KiviBot 的搜图插件，数据来源百度图片稳定不失效",
   "main": "lib/index.js",
   "repository": "KiviBotLab/kivibot-plugin-soutu",

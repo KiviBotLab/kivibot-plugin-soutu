@@ -69,7 +69,17 @@ plugin.onMounted(() => {
 
     const imageUrl = await fetchSearchResult(word)
 
-    e.reply(segment.image(imageUrl))
+    if (imageUrl) {
+      e.reply(segment.image(imageUrl))
+    } else {
+      const imageUrl = await fetchSearchResult(word)
+
+      if (imageUrl) {
+        e.reply(segment.image(imageUrl))
+      } else {
+        e.reply('搜索服务繁忙，请稍后重试')
+      }
+    }
   })
 })
 
